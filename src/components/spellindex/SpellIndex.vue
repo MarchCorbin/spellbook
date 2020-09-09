@@ -7,5 +7,19 @@
 <script>
 // import Home from '../../views/Home.vue'
 export default {
+  name: 'spellindex',
+  data() {
+    return {
+     allspells: {}
+    }
+  },
+  methods: {
+    getAllSpells() {
+      fetch('https://www.potterapi.com/v1/spells/')
+      .then(response => response.json())
+      .then(data => this.allspells = data)
+    }
+  }
 }
+
 </script>
