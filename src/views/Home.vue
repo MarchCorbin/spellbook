@@ -70,9 +70,27 @@ body {
     margin-bottom: 5em;
 }
 
+button {
+  background: transparent;
+  font-size: 36px;
+  padding: 1em;
+}
+
 @media screen and (max-width: 950px){
   body {
     background-size: 60em;
+    
+  }
+
+  button {
+    margin: .3em;
+    min-width: 8em;
+  }
+
+  .button-holder {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
