@@ -7,16 +7,21 @@
 <script>
 // import Home from '../../views/Home.vue'
 export default {
-  name: 'spellindex',
+  name: 'SpellIndex',
   data() {
     return {
      allspells: {}
     }
   },
+  created() {
+    this.getAllSpells()
+  },
+
   methods: {
     getAllSpells() {
-      fetch('https://www.potterapi.com/v1/spells/')
+      fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
       .then(response => response.json())
+      .then(response => console.log('aksdfjakljf', response))
       .then(data => this.allspells = data)
     }
   }
