@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='parchment'>
     <h1 class="title">Hogwarts Spellbook ed.XVLVIIIXV</h1>
 
     <div class='button-holder'>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-
+import '../assets/parchment.jpg'
 // @ is an alias to /src
 // import CreateSpell from '../components/createspell/CreateSpell.vue'
 // import SpellIndex from '../components/spellindex/SpellIndex'
@@ -44,15 +44,35 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .button-holder {
   display: flex;
   justify-content: space-around;
 }
+
+* {
+  font-family: 'IM Fell English', serif;
+  
+}
+
+body {
+  background-image: url('../assets/parchment.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+/* .parchment {
+  background-image: url('../assets/parchment.jpg');
+  background-size: 100% */
+/* } */
 
 .title {
     margin-top: 4em;
     margin-bottom: 5em;
 }
 
+@media screen and (max-width: 950px){
+  body {
+    background-size: 60em;
+  }
+}
 </style>
