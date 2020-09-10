@@ -25,23 +25,8 @@ export default {
 
   name: 'Home',
   components: {
-  //  SpellIndex
   },
-  // data() {
-  //   return {
-  //     allSpells: []
-  //   }
-  // },
-  // created() {
-  //   this.getAllSpells()
-  // },
-  // methods: {
-  //   getAllSpells () {
-  //     fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
-  //     .then(response => response.json())
-  //     .then(data => this.allSpells = data)
-  //   }
-  // }   
+  
 }
 </script>
 
@@ -57,20 +42,11 @@ export default {
 }
 
 body {
-  /* background-image: url('../assets/parchment.jpg'); */
-  /* background-size: 100%; */
-  /* background-repeat: no-repeat; */
   background: url('../assets/parchment.jpg') no-repeat fixed;
    background-size: 100%;
 }
-/* .parchment {
-  background-image: url('../assets/parchment.jpg');
-  background-size: 100% */
-/* } */
 
 .title {
-    /* margin-top: 4em;
-    margin-bottom: 5em; */
     font-size: 3em;
     margin-bottom: 2em;
 }
@@ -84,7 +60,6 @@ button {
 @media screen and (max-width: 950px){
   body {
     background-size: 60em;
-
   }
 
   button {

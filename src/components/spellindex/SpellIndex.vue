@@ -2,11 +2,10 @@
   <div>
     <Header />
     <ul>
-
       <div class='spell-card' v-bind:key='spell._id' v-for='spell in allSpells'>
         <h1>{{spell.spell}}</h1>
-        <h3 v-bind:spell='spell'>{{spell.type}}</h3>
-        <h3 v-bind:spell='spell'>{{spell.effect}}</h3>
+        <h3 >{{spell.type}}</h3>
+        <h3 >{{spell.effect}}</h3>
       </div>
     </ul>
   </div>
@@ -15,13 +14,15 @@
 
 
 <script>
-// import Home from '../../views/Home.vue'
-import Header from '../../'
+import Header from '../header/Header.vue'
 export default {
   props: {
     // allSpells : String 
   },
   name: 'SpellIndex',
+  components: {
+    Header
+  },
   data() {
     return {
       allSpells: []
