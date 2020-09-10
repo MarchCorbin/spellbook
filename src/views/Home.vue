@@ -9,7 +9,7 @@
       <router-link to='/spellindex'>
         <button>View Spells!</button>
       </router-link>
-      <SpellIndex v-bind:allSpells=this.allSpells />
+      <!-- <SpellIndex v-bind:allSpells=this.allSpells /> -->
     </div>
   </div>
 </template>
@@ -18,29 +18,29 @@
 
 // @ is an alias to /src
 // import CreateSpell from '../components/createspell/CreateSpell.vue'
-import SpellIndex from '../components/spellindex/SpellIndex'
+// import SpellIndex from '../components/spellindex/SpellIndex'
 
 export default {
 
   name: 'Home',
   components: {
-   SpellIndex
+  //  SpellIndex
   },
-  data() {
-    return {
-      allSpells: []
-    }
-  },
-  created() {
-    this.getAllSpells()
-  },
-  methods: {
-    getAllSpells () {
-      fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
-      .then(response => response.json())
-      .then(data => this.allSpells = data)
-    }
-  }   
+  // data() {
+  //   return {
+  //     allSpells: []
+  //   }
+  // },
+  // created() {
+  //   this.getAllSpells()
+  // },
+  // methods: {
+  //   getAllSpells () {
+  //     fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
+  //     .then(response => response.json())
+  //     .then(data => this.allSpells = data)
+  //   }
+  // }   
 }
 </script>
 
