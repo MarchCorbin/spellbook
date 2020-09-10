@@ -1,6 +1,7 @@
 <template>
   <div class='parchment'>
-    <h1 class="title">Hogwarts Spellbook ed.XVLVIIIXV</h1>
+    <h1 class="title">The Standard Book of Spells by Miranda Goshawk: Year 5 edition
+    </h1>
 
     <div class='button-holder'>
       <router-link to='/createspell'>
@@ -56,9 +57,11 @@ export default {
 }
 
 body {
-  background-image: url('../assets/parchment.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  /* background-image: url('../assets/parchment.jpg'); */
+  /* background-size: 100%; */
+  /* background-repeat: no-repeat; */
+  background: url('../assets/parchment.jpg') no-repeat fixed;
+   background-size: 100%;
 }
 /* .parchment {
   background-image: url('../assets/parchment.jpg');
@@ -66,8 +69,10 @@ body {
 /* } */
 
 .title {
-    margin-top: 4em;
-    margin-bottom: 5em;
+    /* margin-top: 4em;
+    margin-bottom: 5em; */
+    font-size: 3em;
+    margin-bottom: 2em;
 }
 
 button {
@@ -79,7 +84,7 @@ button {
 @media screen and (max-width: 950px){
   body {
     background-size: 60em;
-    
+
   }
 
   button {
