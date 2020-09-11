@@ -1,23 +1,42 @@
 <template>
-  <ul>
-    <li v-bind:key='spell._id' v-for='spell in allSpells'>
-     <h3 v-bind:spell='spell'>{{spell._id}}</h3>
-    </li>
-  </ul>
+  <div>
+    <Header />
+    <ul>
+      <!-- <form @submit.prevent="handleSubmit" >
+        <input v-model="inputField" />
+        <button type="submit">Submit</button>
+      </form> -->
+      <div class="spell-card" v-bind:key='spell._id' v-for='spell in allSpells'>
+        <h1>{{spell.spell}}</h1>
+        <img :src="`/assets/${spell.type}.png`" :alt="`${spell.type}`" />
+        <h3 >{{spell.type}}</h3>
+        <h3 >{{spell.effect}}</h3>
+      </div>
+    </ul>
+  </div>
 </template>
 
 
 
 <script>
-// import Home from '../../views/Home.vue'
+import Header from '../header/Header.vue'
+import '../../assets/Charm.png'
+import '../../assets/Spell.png'
+import '../../assets/Curse.png'
+import '../../assets/Hex.png'
+
 export default {
   props: {
-
+    // allSpells : String 
   },
   name: 'SpellIndex',
-data() {
+  components: {
+    Header
+  },
+  data() {
     return {
-      allSpells: []
+      allSpells: [],
+      // inputField: ''
     }
   },
   created() {
@@ -28,7 +47,8 @@ data() {
       fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
       .then(response => response.json())
       .then(data => this.allSpells = data)
-    }
+    },
+
   }   
 }
 
@@ -36,3 +56,32 @@ data() {
 
 
 </script>
+
+<style scoped>
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+  }
+
+  img {
+    width: 16em
+  }
+
+  .spell-card {
+    border-color: black;
+    border: 5px solid;
+    margin: 1em;   
+    width: 17em;
+    height: fit-content; 
+  }
+
+@media screen and (max-width: 750px) {
+  ul {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+
+</style>

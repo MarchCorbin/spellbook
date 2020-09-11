@@ -7,7 +7,6 @@ import SpellIndex from '../spellindex/SpellIndex.vue'
 
 export default {
   name: 'Spell',
-  props: [spell] 
 
 }
 </script>
