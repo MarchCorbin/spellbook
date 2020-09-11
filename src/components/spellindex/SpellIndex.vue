@@ -5,8 +5,8 @@
       <div class='spell-card' v-bind:key='spell._id' v-for='spell in allSpells'>
         <h1>{{spell.spell}}</h1>
 
-        <img src="../../assets/Charm.png" :alt="`${spell.type}`" />
-        
+        <img src="../../assets/charm.png" :alt="`${spell.type}`" />
+
         <h3 >{{spell.type}}</h3>
         <h3 >{{spell.effect}}</h3>
       </div>
@@ -18,14 +18,14 @@
 
 <script>
 import Header from '../header/Header.vue'
-import '../../assets/Charm.png'
-import '../../assets/Spell.png'
-import '../../assets/Curse.png'
-import '../../assets/Hex.png'
+import '../../assets/charm.png'
+import '../../assets/spell.png'
+import '../../assets/curse.png'
+import '../../assets/hex.png'
 
 export default {
   props: {
-    // allSpells : String 
+    // allSpells : String
   },
   name: 'SpellIndex',
   components: {
@@ -49,7 +49,7 @@ export default {
     determineSpellType(type) {
       return `../../assets/${type}.png`
     }
-  }   
+  }
 }
 
 
@@ -62,7 +62,7 @@ export default {
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    
+
   }
 
   img {
@@ -72,9 +72,9 @@ export default {
   .spell-card {
     border-color: black;
     border: 5px solid;
-    margin: 1em;   
+    margin: 1em;
     width: 17em;
-    height: fit-content; 
+    height: fit-content;
   }
 
 @media screen and (max-width: 750px) {
