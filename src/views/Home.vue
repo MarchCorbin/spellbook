@@ -12,6 +12,12 @@
       </router-link>
       <!-- <SpellIndex v-bind:allSpells=this.allSpells /> -->
     </div>
+    <div class='icon-holder' >
+      <img src='../assets/Charm.png' />
+      <img src='../assets/Spell.png' />
+      <img src='../assets/Curse.png' />
+      <img src='../assets/Hex.png' />
+    </div>
   </div>
 </template>
 
@@ -20,6 +26,10 @@ import '../assets/parchment.jpg'
 // @ is an alias to /src
 // import CreateSpell from '../components/createspell/CreateSpell.vue'
 // import SpellIndex from '../components/spellindex/SpellIndex'
+import '../assets/Charm.png'
+import '../assets/Spell.png'
+import '../assets/Curse.png'
+import '../assets/Hex.png'
 
 export default {
 
@@ -49,6 +59,11 @@ body {
 .title {
     font-size: 3em;
     margin-bottom: 2em;
+}
+
+.icon-holder {
+  display: flex;
+  justify-content: space-around;
 }
 
 button {
