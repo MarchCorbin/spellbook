@@ -58,16 +58,23 @@ export default {
 </script>
 
 <style scoped>
+
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     
   }
 
+  img {
+    width: 16em
+  }
+
   .spell-card {
     border-color: black;
     border: 5px solid;
-    margin: 1em;    
+    margin: 1em;   
+    width: 17em;
+    height: fit-content; 
   }
 
 @media screen and (max-width: 750px) {
