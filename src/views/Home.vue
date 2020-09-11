@@ -4,19 +4,23 @@
     </h1>
 
     <div class='button-holder'>
-      <router-link to='/createspell'>
-        <button>Create a Spell!</button>
+      <router-link class='nav-button' to='/createspell'>
+        <button>
+        Create a Spell!
+        </button>
       </router-link>
-      <router-link to='/spellindex'>
+      <router-link class='nav-button' to='/spellindex'>
         <button>View Spells!</button>
       </router-link>
       <!-- <SpellIndex v-bind:allSpells=this.allSpells /> -->
     </div>
     <div class='icon-holder' >
-      <img src='../assets/Charm.png' />
-      <img src='../assets/Spell.png' />
-      <img src='../assets/Curse.png' />
-      <img src='../assets/Hex.png' />
+      <img class='icon' src='../assets/Charm.png' />
+      <img class='icon' src='../assets/Spell.png' />
+    </div>
+    <div class='icon-holder'>
+      <img class='icon' src='../assets/Curse.png' />
+      <img class='icon' src='../assets/Hex.png' />
     </div>
   </div>
 </template>
@@ -44,6 +48,7 @@ export default {
 .button-holder {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 * {
@@ -56,14 +61,27 @@ body {
    background-size: 100%;
 }
 
+/* .nav-button {
+
+} */
+
+a {
+  margin: .5em;
+}
+
 .title {
     font-size: 3em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .icon-holder {
   display: flex;
   justify-content: space-around;
+}
+
+.icon {
+  width: 16em;
+  height: 16em;
 }
 
 button {
