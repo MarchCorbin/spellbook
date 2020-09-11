@@ -27,9 +27,6 @@
 
 <script>
 import '../assets/parchment.jpg'
-// @ is an alias to /src
-// import CreateSpell from '../components/createspell/CreateSpell.vue'
-// import SpellIndex from '../components/spellindex/SpellIndex'
 import '../assets/Charm.png'
 import '../assets/Spell.png'
 import '../assets/Curse.png'
