@@ -15,12 +15,12 @@
       <!-- <SpellIndex v-bind:allSpells=this.allSpells /> -->
     </div>
     <div class='icon-holder' >
-      <img class='icon' src='../assets/Charm.png' />
-      <img class='icon' src='../assets/Spell.png' />
+      <img class='icon' src='../assets/charm.png' />
+      <img class='icon' src='../assets/spell.png' />
     </div>
     <div class='icon-holder'>
-      <img class='icon' src='../assets/Curse.png' />
-      <img class='icon' src='../assets/Hex.png' />
+      <img class='icon' src='../assets/curse.png' />
+      <img class='icon' src='../assets/hex.png' />
     </div>
   </div>
 </template>
@@ -30,10 +30,10 @@ import '../assets/parchment.jpg'
 // @ is an alias to /src
 // import CreateSpell from '../components/createspell/CreateSpell.vue'
 // import SpellIndex from '../components/spellindex/SpellIndex'
-import '../assets/Charm.png'
-import '../assets/Spell.png'
-import '../assets/Curse.png'
-import '../assets/Hex.png'
+import '../assets/charm.png'
+import '../assets/spell.png'
+import '../assets/curse.png'
+import '../assets/hex.png'
 
 export default {
 
@@ -53,7 +53,7 @@ export default {
 
 * {
   font-family: 'IM Fell English', serif;
-  
+
 }
 
 body {
