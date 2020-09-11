@@ -2,11 +2,13 @@
   <div>
     <Header />
     <ul>
-      <div class='spell-card' v-bind:key='spell._id' v-for='spell in allSpells'>
+      <!-- <form @submit.prevent="handleSubmit" >
+        <input v-model="inputField" />
+        <button type="submit">Submit</button>
+      </form> -->
+      <div class="spell-card" v-bind:key='spell._id' v-for='spell in allSpells'>
         <h1>{{spell.spell}}</h1>
-
-        <img src="../../assets/Charm.png" :alt="`${spell.type}`" />
-        
+        <img :src="`/assets/${spell.type}.png`" :alt="`${spell.type}`" />
         <h3 >{{spell.type}}</h3>
         <h3 >{{spell.effect}}</h3>
       </div>
@@ -33,7 +35,8 @@ export default {
   },
   data() {
     return {
-      allSpells: []
+      allSpells: [],
+      // inputField: ''
     }
   },
   created() {
@@ -46,9 +49,6 @@ export default {
       .then(data => this.allSpells = data)
     },
 
-    determineSpellType(type) {
-      return `../../assets/${type}.png`
-    }
   }   
 }
 
