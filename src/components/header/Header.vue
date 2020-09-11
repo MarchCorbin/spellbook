@@ -1,7 +1,12 @@
 <template>
   <nav>
-    <h1>The Standard Book of Spells by Miranda Goshawk: Year 1</h1>
-    <!-- <img src='' class='header-logo' alt='Hogwarts spell book' /> -->
+    <div class='header-title'>
+      <router-link  to='/'>
+        <img src='../../assets/Curse.png' class='header-logo' alt='Hogwarts spell book' />
+        <button class='header-title'>The Standard Book of Spells by Miranda Goshawk: Year 1</button>
+        <img src='../../assets/Curse.png' class='header-logo' alt='Hogwarts spell book' />
+      </router-link>
+    </div>
     <div class='button-holder'>
       <router-link to='/createspell'>
         <button>Create a New Spell</button>
@@ -29,8 +34,13 @@ export default {
     padding: 13px;
   }
 
+  .header-title {
+    text-decoration: none;
+    border: none
+  }
+
   .router-link-active {
     box-shadow: inset #000000 0 0 60px;
-    text-shadow: 0px -2px 4px #fff, 
+    text-shadow: 0px -2px 4px #fff;
   }
 </style>
