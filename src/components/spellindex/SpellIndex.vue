@@ -4,6 +4,9 @@
     <ul>
       <div class='spell-card' v-bind:key='spell._id' v-for='spell in allSpells'>
         <h1>{{spell.spell}}</h1>
+
+        <img src="../../assets/Charm.png" :alt="`${spell.type}`" />
+        
         <h3 >{{spell.type}}</h3>
         <h3 >{{spell.effect}}</h3>
       </div>
@@ -15,6 +18,11 @@
 
 <script>
 import Header from '../header/Header.vue'
+import '../../assets/Charm.png'
+import '../../assets/Spell.png'
+import '../../assets/Curse.png'
+import '../../assets/Hex.png'
+
 export default {
   props: {
     // allSpells : String 
@@ -36,6 +44,10 @@ export default {
       fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
       .then(response => response.json())
       .then(data => this.allSpells = data)
+    },
+
+    determineSpellType(type) {
+      return `../../assets/${type}.png`
     }
   }   
 }
