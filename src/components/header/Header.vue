@@ -4,7 +4,8 @@
       <router-link  to='/'>
         <button class='header-title'>The Standard Book of Spells by Miranda Goshawk: Year 1</button>
       </router-link>
-        <img src='../../assets/illuminati.png' class='header-logo' alt='Hogwarts spell book' />
+      <br/>
+      <img src='../../assets/illuminati.png' class='header-logo' alt='Hogwarts spell book' />
     </div>
     <div class='button-holder'>
       <router-link to='/createspell'>
@@ -29,10 +30,16 @@ export default {
     border-bottom: black solid 2px;
   }
 
+  img {
+    width: 16em
+  }
   .button-holder {
     padding: 13px;
   }
 
+  button {
+        min-width: 9em;
+  }
   .header-title {
     text-decoration: none;
     border: none
