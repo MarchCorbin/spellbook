@@ -20,14 +20,10 @@
 
 <script>
 import Header from '../header/Header.vue'
-import '../../assets/Charm.png'
-import '../../assets/Spell.png'
-import '../../assets/Curse.png'
-import '../../assets/Hex.png'
 
 export default {
   props: {
-    // allSpells : String 
+
   },
   name: 'SpellIndex',
   components: {
@@ -36,7 +32,7 @@ export default {
   data() {
     return {
       allSpells: [],
-      // inputField: ''
+
     }
   },
   created() {
