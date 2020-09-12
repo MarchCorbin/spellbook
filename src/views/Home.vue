@@ -5,12 +5,12 @@
 
     <div class='button-holder'>
       <router-link class='nav-button' to='/createspell'>
-        <button>
+        <button class='create-a-spell'>
         Create a Spell!
         </button>
       </router-link>
       <router-link class='nav-button' to='/spellindex'>
-        <button>View Spells!</button>
+        <button class='view-spells'>View Spells!</button>
       </router-link>
     </div>
     <div class='icon-holder' >

@@ -2,10 +2,6 @@
   <div>
     <Header />
     <ul>
-      <!-- <form @submit.prevent="handleSubmit" >
-        <input v-model="inputField" />
-        <button type="submit">Submit</button>
-      </form> -->
       <div class="spell-card" v-bind:key='spell._id' v-for='spell in allSpells'>
         <h1>{{spell.spell}}</h1>
         <img :src="`/assets/${spell.type}.png`" :alt="`${spell.type}`" />

@@ -1,15 +1,11 @@
 import Header from '@/components/header/Header.vue'
-import { shallowMount, createLocalVue, mount, waitFor } from '@vue/test-utils'
+import { mount, waitFor } from '@vue/test-utils'
 import VueRouter from 'vue-router'
 
 describe('Header.vue', () => {
-  let wrapper, picture
+  let wrapper
   
   beforeEach(() => {
-   
-    // const localVue = createLocalVue()
-    // const router = new VueRouter()
-    // localVue.use(VueRouter)
     wrapper = mount(Header)
     
   })
@@ -21,8 +17,8 @@ expect(wrapper.text()).toContain('Create a New Spell')
 expect(wrapper.text()).toContain('Spell Index')
   })
   // it('should have an image', async() => {
-  //   picture = wrapper.find('header-logo')
-  //   console.log(picture, 'IAMPICTURE') 
-  //  expect(picture.is('.header-logo')).toBe(true)
+  //  let picture = await wrapper.find('header-logo')
+  //  console.log(picture, 'IAMPICTURE')
+  //  expect(picture).toBeInTheDocument()
   // })
 })
