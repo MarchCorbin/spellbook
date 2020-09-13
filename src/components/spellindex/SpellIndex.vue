@@ -32,17 +32,29 @@ export default {
     }
   },
   created() {
-    this.getAllSpells()
     this.fetchUserSpells()
+    this.getAllSpells()
   },
   methods: {
     getAllSpells () {
       fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
       .then(response => response.json())
-      .then(data => this.allSpells = data)
+      .then(data => this.allSpells = [...this.allSpells, ...data])
     },
-    fetchUserSpells() {
-      localStorage.getItem('newEntry16')
+    fetchUserSpells () {
+      let currentItem = localStorage.getItem('newEntry4')
+      let parsedItem = JSON.parse(currentItem)
+      console.log(parsedItem.spellName, 'IAMPARSED')
+      this.convertToSpell(parsedItem)
+  },
+  convertToSpell(parsedItem) {
+    let newSpell = {
+        "_id": parsedItem.id,
+        "spell": parsedItem.spellName,
+        "type": parsedItem.type,
+        "effect": parsedItem.effect
+    }
+    this.allSpells.push(newSpell)
   }
   }   
 }
