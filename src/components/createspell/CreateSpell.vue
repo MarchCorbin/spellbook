@@ -14,8 +14,9 @@
     </div>
     <input v-model="effect" class='inputEntry'  placeholder="Effect of Your Spell" />
     <br>
+    <h3 class='error-message'></h3>
     <button  @click='this.submitHandler'>Submit!</button>
- 
+
   </form>
 </template>
 <script>
@@ -32,7 +33,8 @@ export default {
         id: Date.now(),
         spellName: '',
         effect: '',
-        type: ''
+        type: '',
+        error: 'Please fill out all fields!'
       }
     },
   methods: {
@@ -55,7 +57,8 @@ export default {
     },
     submitHandler(e) {
       e.preventDefault()
-      this.keyVal++
+      this.checkInputs()
+      this.keyVal = localStorage.length
       let newSpell = {
         id: this.id,
         spellName: this.spellName,
@@ -63,13 +66,23 @@ export default {
         type: this.type
       }
       localStorage.setItem(`newEntry${this.keyVal}`, JSON.stringify(newSpell))
+      console.log(localStorage.length, 'IAMTHESTORAGE')
       this.clearFields()
     },
     clearFields () {
       this.removeActive()
       this.effect = ''
       this.spellName = ''
-      //})
+    },
+    checkInputs() {
+     let errMessage = document.querySelector('.error-message')
+      let spellButtons = document.querySelectorAll('.spell-type')
+      spellButtons.forEach(spell => {
+        if(!spell.classList.contains('active')){
+          errMessage.innerText = "Select a Spell Type!"
+        }
+      })
+     if(this.effect === '' || this.spellName === ''){errMessage.innerText = this.error}
     }
   }
 }
