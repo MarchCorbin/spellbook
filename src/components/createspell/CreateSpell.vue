@@ -57,7 +57,9 @@ export default {
     },
     submitHandler(e) {
       e.preventDefault()
-      this.checkInputs()
+     let result = this.checkInputs()
+     if(result){
+     
       this.keyVal = localStorage.length
       let newSpell = {
         id: this.id,
@@ -68,7 +70,7 @@ export default {
       localStorage.setItem(`newEntry${this.keyVal}`, JSON.stringify(newSpell))
       console.log(localStorage.length, 'IAMTHESTORAGE')
       this.clearFields()
-    },
+    }},
     clearFields () {
       this.removeActive()
       this.effect = ''
@@ -80,9 +82,13 @@ export default {
       spellButtons.forEach(spell => {
         if(!spell.classList.contains('active')){
           errMessage.innerText = "Select a Spell Type!"
+          return false
         }
       })
-     if(this.effect === '' || this.spellName === ''){errMessage.innerText = this.error}
+     if(this.effect === '' || this.spellName === ''){
+       errMessage.innerText = this.error
+       return false
+       }
     }
   }
 }

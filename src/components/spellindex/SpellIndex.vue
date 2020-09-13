@@ -33,6 +33,7 @@ export default {
   },
   created() {
     this.getAllSpells()
+    this.fetchUserSpells()
   },
   methods: {
     getAllSpells () {
@@ -40,7 +41,9 @@ export default {
       .then(response => response.json())
       .then(data => this.allSpells = data)
     },
-
+    fetchUserSpells() {
+      localStorage.getItem('newEntry16')
+  }
   }   
 }
 
