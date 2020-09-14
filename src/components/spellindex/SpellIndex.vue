@@ -1,14 +1,15 @@
 <template>
   <div>
     <Header />
-    <div>
-    <button @click='this.clickHandler'>Personal</button>
-    <button @click='this.clickHandler'>Curse</button>
-    <button @click='this.clickHandler'>Charm</button>
-    <button @click='this.clickHandler'>Hex</button>
-    <button @click='this.clickHandler'>Enchantment</button>
-    <button @click='this.clickHandler'>Jinx</button>
-    <button @click='this.clickHandler'>Spell</button>
+    <div class='spell-button-holder'>
+    <button class='spell-button' @click='this.allSpellHandler'>All Spells</button>
+    <button class='spell-button' @click='this.personalHandler'>Personal</button>
+    <button class='spell-button' @click='this.clickHandler'>Curse</button>
+    <button class='spell-button' @click='this.clickHandler'>Charm</button>
+    <button class='spell-button' @click='this.clickHandler'>Hex</button>
+    <button class='spell-button' @click='this.clickHandler'>Enchantment</button>
+    <button class='spell-button' @click='this.clickHandler'>Jinx</button>
+    <button class='spell-button' @click='this.clickHandler'>Spell</button>
     <!-- <button @click='this.clickHandler'>All Spells</button> -->
 
     </div>
@@ -61,11 +62,8 @@ export default {
       const nonfiltered = document.querySelector('.spell-section')
       let currentType = e.target.innerText
       this.filtered = this.allSpells.filter(spell => spell.type === `${currentType}`)
-      // console.log(filtered, 'filtered')
-      // console.log(nonfiltered, 'nonfiltered')
       filtered.classList.remove('hidden')
       nonfiltered.classList.add('hidden')
-      console.log('IMWORKING')
     },
     getAllSpells () {
       fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
@@ -96,6 +94,19 @@ export default {
         "personal": true
     }
     this.allSpells.push(newSpell)
+  },
+  allSpellHandler() {
+    const filtered = document.querySelector('.spell-section-filtered')
+      const nonfiltered = document.querySelector('.spell-section')
+       filtered.classList.add('hidden')
+       nonfiltered.classList.remove('hidden')
+  },
+  personalHandler() {
+    this.filtered = this.allSpells.filter(spell => spell.personal === true)
+     const filtered = document.querySelector('.spell-section-filtered')
+      const nonfiltered = document.querySelector('.spell-section')
+       filtered.classList.remove('hidden')
+       nonfiltered.classList.add('hidden')
   }
   }   
 }
@@ -106,6 +117,10 @@ export default {
 </script>
 
 <style scoped>
+
+  .spell-button {
+    font-size: 1.5em;
+  }
 
   ul {
     display: grid;
