@@ -3,14 +3,44 @@
     <Header />
     <input v-model="spellName" class='inputEntry1' placeholder="Name of Your Spell" />
     <div>
-      <button class='spell-type' @click='this.pickType'>Curse</button>
-      <button class='spell-type' @click='this.pickType'>Spell</button>
-      <button class='spell-type' @click='this.pickType'>Charm</button>
+       <button class='spell-type' @click='this.pickType'>
+      <div class='spell-img'>
+        <img class='spell-img' src='../../srcassets/Curse.png' />
+        <h4>Curse</h4>
+      </div>
+    </button>
+       <button class='spell-type' @click='this.pickType'>
+      <div class='spell-img'>
+        <img class='spell-img' src='../../srcassets/Spell.png' />
+        <h4>Spell</h4>
+      </div>
+    </button>
+       <button class='spell-type' @click='this.pickType'>
+      <div class='spell-img'>
+        <img class='spell-img' src='../../srcassets/Charm.png' />
+        <h4>Charm</h4>
+      </div>
+    </button>
     </div>
     <div>
-    <button class='spell-type' @click='this.pickType'>Hex</button>
-    <button class='spell-type' @click='this.pickType'>Enchantment</button>
-    <button class='spell-type' @click='this.pickType'>Jinx</button>
+     <button class='spell-type' @click='this.pickType'>
+      <div class='spell-img'>
+        <img class='spell-img' src='../../srcassets/Hex.png' />
+        <h4>Hex</h4>
+      </div>
+    </button>
+     <button class='spell-type' @click='this.pickType'>
+      <div class='spell-img'>
+        <img class='spell-img' src='../../srcassets/Enchantment.png' />
+        <h4>Enchantment</h4>
+      </div>
+    </button>
+    <button class='spell-type' @click='this.pickType'>
+      <div class='spell-img'>
+        <img class='spell-img' src='../../srcassets/Jinx.png' />
+        <h4>Jinx</h4>
+      </div>
+    </button>
     </div>
     <input v-model="effect" class='inputEntry'  placeholder="Effect of Your Spell" />
     <br>
@@ -41,7 +71,6 @@ export default {
     pickType(e) {
       e.preventDefault()
       this.removeActive()
-      console.log(document.querySelectorAll('.spell-type'), 'IAMTARGET')
       e.target.classList.add('active')
       this.addType(e)
      },
@@ -53,13 +82,12 @@ export default {
     },
     addType (e) {
       this.type = e.target.innerText
-      console.log(this.type, 'IAMTHETYPE')
     },
     submitHandler(e) {
       e.preventDefault()
-     let result = this.checkInputs()
+     let result = this.checkButtons()
+     console.log(result, 'IAMRESULT')
      if(result){
-     
       this.keyVal = localStorage.length
       let newSpell = {
         id: this.id,
@@ -68,7 +96,6 @@ export default {
         type: this.type
       }
       localStorage.setItem(`newEntry${this.keyVal}`, JSON.stringify(newSpell))
-      console.log(localStorage.length, 'IAMTHESTORAGE')
       this.clearFields()
     }},
     clearFields () {
@@ -76,28 +103,57 @@ export default {
       this.effect = ''
       this.spellName = ''
     },
-    checkInputs() {
-     let errMessage = document.querySelector('.error-message')
+    checkButtons() {
+      let count = 0
+      let errMessage = document.querySelector('.error-message')
       let spellButtons = document.querySelectorAll('.spell-type')
-      spellButtons.forEach(spell => {
-        if(!spell.classList.contains('active')){
+      if(this.checkInputs()){
+        spellButtons.forEach(spell => {
+          if(spell.classList.contains('active')){
+            count += 1
+          }
+        })
+        if(count === 0){
+          console.log(count)
           errMessage.innerText = "Select a Spell Type!"
           return false
+        } else {
+          return true
         }
-      })
-     if(this.effect === '' || this.spellName === ''){
-       errMessage.innerText = this.error
-       return false
-       }
+      }
+    },
+    checkInputs() {
+      let errMessage = document.querySelector('.error-message')
+      if(this.effect === '' || this.spellName === ''){
+        errMessage.innerText = this.error
+        return false
+        }
+        errMessage.innerText = "Spell Submitted!"
+        return true
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .active {
   box-shadow: inset #000000 0 0 60px;
   text-shadow: 0px -2px 4px #fff;
+}
+
+h4 {
+  margin: 0px;
+}
+
+.spell-img {
+  height: 3em;
+  pointer-events: none;
+}
+
+.spell-type {
+  margin: .5em;
+  padding-top: 15px;
+  height: 6.5em;
 }
 
 </style>
