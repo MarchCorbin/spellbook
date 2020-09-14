@@ -42,7 +42,7 @@
       </div>
     </button>
     </div>
-    <input v-model="effect" class='inputEntry'  placeholder="Effect of Your Spell" />
+    <input v-model="effect" class='inputEntry2'  placeholder="Effect of Your Spell" />
     <br>
     <h3 class='error-message'></h3>
     <button  @click='this.submitHandler'>Submit!</button>
@@ -154,6 +154,15 @@ h4 {
   margin: .5em;
   padding-top: 15px;
   height: 6.5em;
+}
+
+.inputEntry1 {
+  font-size: 2em;
+  margin-top: 0.5em;
+}
+
+.inputEntry2 {
+  font-size: 2em;
 }
 
 </style>

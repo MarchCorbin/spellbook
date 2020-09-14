@@ -16,9 +16,8 @@ expect(wrapper.text()).toContain('The Standard Book of Spells by Miranda Goshawk
 expect(wrapper.text()).toContain('Create a New Spell')
 expect(wrapper.text()).toContain('Spell Index')
   })
-  // it('should have an image', async() => {
-  //  let picture = await wrapper.find('header-logo')
-  //  console.log(picture, 'IAMPICTURE')
-  //  expect(picture).toBeInTheDocument()
-  // })
+  it('should have an image', () => {
+   let picture =  wrapper.findAll('.header-logo')
+   expect(picture.length).toBe(2)
+  })
 })
