@@ -56,15 +56,16 @@ export default {
   },
   methods: {
 
-    clickHandler() {
-      // this.filtered = this.allSpells.filter(spell => spell.type === 'Enchantment')
+    clickHandler(e) {
+      const filtered = document.querySelector('.spell-section-filtered')
       const nonfiltered = document.querySelector('.spell-section')
-      // const filtered = document.querySelector('.spell-card-filtered')
+      let currentType = e.target.innerText
+      this.filtered = this.allSpells.filter(spell => spell.type === `${currentType}`)
       // console.log(filtered, 'filtered')
       // console.log(nonfiltered, 'nonfiltered')
-      // filtered.classList.remove('.hidden')
-      console.log('IMWORKING')
+      filtered.classList.remove('hidden')
       nonfiltered.classList.add('hidden')
+      console.log('IMWORKING')
     },
     getAllSpells () {
       fetch('https://www.potterapi.com/v1/spells?key=$2a$10$m4giiYReoHdY5vLc5OsvxOPchfJHMDP0afjPdh/CN03cv/vc0SAl2')
