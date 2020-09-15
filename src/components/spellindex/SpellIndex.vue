@@ -2,16 +2,14 @@
   <div>
     <Header />
     <div class='spell-button-holder'>
-    <button class='spell-button' @click='this.allSpellHandler'>All Spells</button>
-    <button class='spell-button' @click='this.personalHandler'>Personal</button>
-    <button class='spell-button' @click='this.clickHandler'>Curse</button>
-    <button class='spell-button' @click='this.clickHandler'>Charm</button>
-    <button class='spell-button' @click='this.clickHandler'>Hex</button>
-    <button class='spell-button' @click='this.clickHandler'>Enchantment</button>
-    <button class='spell-button' @click='this.clickHandler'>Jinx</button>
-    <button class='spell-button' @click='this.clickHandler'>Spell</button>
-
-
+      <button class='spell-button' @click='this.allSpellHandler'>All Spells</button>
+      <button class='spell-button' @click='this.personalHandler'>Personal</button>
+      <button class='spell-button' @click='this.clickHandler'>Curse</button>
+      <button class='spell-button' @click='this.clickHandler'>Charm</button>
+      <button class='spell-button' @click='this.clickHandler'>Hex</button>
+      <button class='spell-button' @click='this.clickHandler'>Enchantment</button>
+      <button class='spell-button' @click='this.clickHandler'>Jinx</button>
+      <button class='spell-button' @click='this.clickHandler'>Spell</button>
     </div>
     <ul class="spell-section">
       <div class='spell-card'  v-bind:key='spell._id' v-for='spell in allSpells'>

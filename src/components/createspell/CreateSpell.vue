@@ -1,54 +1,57 @@
 <template>
   <form>
     <Header />
+    <h1>Discover a new Spell? Log it into book so you can save it for later!</h1>
     <input v-model="spellName" class='inputEntry1' placeholder="Name of Your Spell" />
-    <div>
-       <button class='spell-type' @click='this.pickType'>
-      <div class='spell-img'>
-        <img class='spell-img' src='../../srcassets/Curse.png' />
-        <h4>Curse</h4>
-      </div>
-    </button>
-       <button class='spell-type' @click='this.pickType'>
-      <div class='spell-img'>
-        <img class='spell-img' src='../../srcassets/Spell.png' />
-        <h4>Spell</h4>
-      </div>
-    </button>
-       <button class='spell-type' @click='this.pickType'>
-      <div class='spell-img'>
-        <img class='spell-img' src='../../srcassets/Charm.png' />
-        <h4>Charm</h4>
-      </div>
-    </button>
+    <div class='type-btn-holder'>
+      <h2>Choose the type of spells below</h2>
+      <button class='spell-type' @click='this.pickType'>
+        <div class='spell-img'>
+          <img class='spell-img' src='../../srcassets/Curse.png' />
+          <h4>Curse</h4>
+        </div>
+      </button>
+      <button class='spell-type' @click='this.pickType'>
+        <div class='spell-img'>
+          <img class='spell-img' src='../../srcassets/Spell.png' />
+          <h4>Spell</h4>
+        </div>
+      </button>
+      <button class='spell-type' @click='this.pickType'>
+        <div class='spell-img'>
+          <img class='spell-img' src='../../srcassets/Charm.png' />
+          <h4>Charm</h4>
+        </div>
+      </button>
     </div>
-    <div>
-     <button class='spell-type' @click='this.pickType'>
-      <div class='spell-img'>
-        <img class='spell-img' src='../../srcassets/Hex.png' />
-        <h4>Hex</h4>
-      </div>
-    </button>
-     <button class='spell-type' @click='this.pickType'>
-      <div class='spell-img'>
-        <img class='spell-img' src='../../srcassets/Enchantment.png' />
-        <h4>Enchantment</h4>
-      </div>
-    </button>
-    <button class='spell-type' @click='this.pickType'>
-      <div class='spell-img'>
-        <img class='spell-img' src='../../srcassets/Jinx.png' />
-        <h4>Jinx</h4>
-      </div>
-    </button>
+    <div class='type-btn-holder'>
+      <button class='spell-type' @click='this.pickType'>
+        <div class='spell-img'>
+          <img class='spell-img' src='../../srcassets/Hex.png' />
+          <h4>Hex</h4>
+        </div>
+      </button>
+      <button class='spell-type' @click='this.pickType'>
+        <div class='spell-img'>
+          <img class='spell-img' src='../../srcassets/Enchantment.png' />
+          <h4>Enchantment</h4>
+        </div>
+      </button>
+      <button class='spell-type' @click='this.pickType'>
+        <div class='spell-img'>
+          <img class='spell-img' src='../../srcassets/Jinx.png' />
+          <h4>Jinx</h4>
+        </div>
+      </button>
     </div>
+    <h1>What does your spell do?</h1>
     <input v-model="effect" class='inputEntry2'  placeholder="Effect of Your Spell" />
     <br>
     <h3 class='error-message'></h3>
-    <button  @click='this.submitHandler'>Submit!</button>
-
+    <button class='submit-btn' @click='this.submitHandler'>Submit!</button>
   </form>
 </template>
+
 <script>
 import Header from '../header/Header.vue'
 export default {
@@ -137,17 +140,25 @@ export default {
 
 <style scoped>
 .active {
-  box-shadow: inset #000000 0 0 60px;
+  box-shadow: inset #252422 0 0 60px;
   text-shadow: 0px -2px 4px #fff;
 }
 
+.submit-btn {
+  box-shadow: inset #ed0101 0 0 60px
+}
 h4 {
   margin: 0px;
 }
 
+h1 h2 {
+  margin-bottom: 0px;
+}
 .spell-img {
   height: 3em;
   pointer-events: none;
+  margin-bottom: -0.5em;
+  
 }
 
 .spell-type {
@@ -165,4 +176,16 @@ h4 {
   font-size: 2em;
 }
 
+@media screen and (max-width: 950px){
+  .type-btn-holder {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .spell-type {
+    display: inline-flex;
+    justify-content: center;
+    height: 5em;
+  }
+}
 </style>
