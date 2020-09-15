@@ -55,7 +55,6 @@
 <script>
 import Header from '../header/Header.vue'
 export default {
-
     name: 'CreateSpell',
     components: {
         Header
@@ -147,6 +146,7 @@ export default {
 .submit-btn {
   box-shadow: inset #ed0101 0 0 60px
 }
+
 h4 {
   margin: 0px;
 }
@@ -154,11 +154,11 @@ h4 {
 h1 h2 {
   margin-bottom: 0px;
 }
+
 .spell-img {
   height: 3em;
   pointer-events: none;
   margin-bottom: -0.5em;
-  
 }
 
 .spell-type {
