@@ -88,7 +88,6 @@ export default {
     submitHandler(e) {
       e.preventDefault()
      let result = this.checkButtons()
-     console.log(result, 'IAMRESULT')
      if(result){
       this.keyVal = localStorage.length
       let newSpell = {
@@ -116,7 +115,6 @@ export default {
           }
         })
         if(count === 0){
-          console.log(count)
           errMessage.innerText = "Select a Spell Type!"
           return false
         } else {
