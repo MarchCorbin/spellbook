@@ -99,5 +99,9 @@ button {
     display: flex;
     flex-direction: column;
   }
+  
+  .submit-btn {
+    width: 100%
+  }
 }
 </style>
