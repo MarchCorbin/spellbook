@@ -1,24 +1,20 @@
 <template>
   <div class='parchment'>
-    <h1 class="title">The Standard Book of Spells by Miranda Goshawk: Year 5 edition
-    </h1>
-
+    <h1 class="title">The Standard Book of Spells by Miranda Goshawk: Year 5 edition</h1>
     <div class='button-holder'>
       <router-link class='nav-button' to='/createspell'>
-        <button class='create-a-spell'>
-        Create a Spell!
-        </button>
+        <button class='create-a-spell'>Create a Spell!</button>
       </router-link>
       <router-link class='nav-button' to='/spellindex'>
         <button class='view-spells'>View Spells!</button>
       </router-link>
     </div>
     <div class='icon-holder' >
-       <img class='icon' src='../srcassets/Charm.png' />
+      <img class='icon' src='../srcassets/Charm.png' />
       <img class='icon' src='../srcassets/Spell.png' />
     </div>
     <div class='icon-holder'>
-     <img class='icon' src='../srcassets/Curse.png' />
+    <img class='icon' src='../srcassets/Curse.png' />
       <img class='icon' src='../srcassets/Hex.png' />
     </div>
   </div>
@@ -51,8 +47,8 @@ export default {
 }
 
 body {
-  background: url('../srcassets/parchment.jpg') no-repeat fixed;
-   background-size: 100%;
+  background: url('../srcassets/parchment.jpg') no-repeat center center fixed;
+  background-size: 110%;
 }
 
 /* .nav-button {
@@ -70,7 +66,7 @@ a {
 
 .icon-holder {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .icon {
@@ -100,8 +96,8 @@ button {
     flex-direction: column;
   }
   
-  .submit-btn {
+  /* .submit-btn {
     width: 100%
-  }
+  } */
 }
 </style>
