@@ -71,18 +71,13 @@ export default {
       .then(data => this.allSpells = [...this.allSpells, ...data])
     },
     fetchUserSpells () {
-      let values = []
       let keys = Object.keys(localStorage)
-      let i = keys.length
-      while(i--){
-      
-        values.push(localStorage.getItem(keys[i]))
-      }
-          values.forEach(value => {
-          let parsedItem = JSON.parse(value)
-          this.convertToSpell(parsedItem)
-          })
-      console.log(values, 'IAMValues')
+      keys.forEach(key => {
+        if(key !== "loglevel:webpack-dev-server") {
+          let spell = localStorage.getItem(key)        
+        this.convertToSpell(JSON.parse(spell))
+        }
+      })
       
   },
   convertToSpell(parsedItem) {
