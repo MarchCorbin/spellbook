@@ -1,7 +1,7 @@
 <template>
   <form>
     <Header />
-    <h1>Discover a new Spell? Log it into book so you can save it for later!</h1>
+    <h1 class='welcome-text'>Discover a new Spell? Log it into book so you can save it for later!</h1>
     <input v-model="spellName" class='inputEntry1' placeholder="Name of Your Spell" />
     <div class='type-btn-holder'>
       <h2>Choose the type of spells below</h2>
