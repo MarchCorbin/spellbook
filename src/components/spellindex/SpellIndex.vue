@@ -10,7 +10,7 @@
     <button class='spell-button' @click='this.clickHandler'>Enchantment</button>
     <button class='spell-button' @click='this.clickHandler'>Jinx</button>
     <button class='spell-button' @click='this.clickHandler'>Spell</button>
-    <!-- <button @click='this.clickHandler'>All Spells</button> -->
+
 
     </div>
     <ul class="spell-section">
@@ -52,8 +52,8 @@ export default {
     }
   },
   created() {
-    this.fetchUserSpells()
     this.getAllSpells()
+    this.fetchUserSpells()
   },
   methods: {
 
@@ -78,12 +78,12 @@ export default {
       
         values.push(localStorage.getItem(keys[i]))
       }
+    //  let parsedItem = JSON.parse("newEntry4")
           values.forEach(value => {
           let parsedItem = JSON.parse(value)
           this.convertToSpell(parsedItem)
-          })
-      console.log(values, 'IAMValues')
-      
+          })      
+          // this.convertToSpell(parsedItem)
   },
   convertToSpell(parsedItem) {
     let newSpell = {
@@ -107,7 +107,7 @@ export default {
       const nonfiltered = document.querySelector('.spell-section')
        filtered.classList.remove('hidden')
        nonfiltered.classList.add('hidden')
-  }
+    }
   }   
 }
 
