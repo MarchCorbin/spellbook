@@ -44,7 +44,7 @@ Overall, it was a learning experience and we did gain exposure to Vue which was 
 * The reader may have noticed that there are two `assets` folder on this repo. Originally, our dynamically rendered cards were not rendering as they should have. With the help of a Vue Developer, we were told that `assets` needed to go in the public folder as opposed to `src` which was never explicitly stated anywhere. Having that issue solved, we then encountered a bug where our static images could not be found and would crash the app. 
 <br/>Doing some trial and error, we found that our static images would only appear if assets were in `src` but not in `public` of which the dynically rendered cards had the opposite problem. The current workaround was to simply include both assets folder in their respective location but an explanation for this bug(?) would be appreciated
 ## Gif Showcase
-<br />
+
 * Users can view all spells that appear in the Potterverse
 ![Spell Index](src/srcassets/spellIndex.gif)
 <br />
