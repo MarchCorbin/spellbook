@@ -47,17 +47,17 @@ Overall, it was a learning experience and we did gain exposure to Vue which was 
 ## Gif Showcase
 
 * Users can view all spells that appear in the Potterverse
-<br>
+
 ![Spell Index](src/srcassets/spellIndex.gif)
 
 
 * Users can create their own spells 
-<br>
+
 ![Create Spell](src/srcassets/create-spell.gif)
 <br>
 
 * Users can filter and view spells by their type
-<br>
+
 ![Filter](src/srcassets/filtering.gif.sb-99dc808f-FXKEL0)
 
 
