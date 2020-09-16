@@ -145,7 +145,7 @@ export default {
 }
 
 .submit-btn {
-  box-shadow: inset #ed0101 0 0 60px
+  box-shadow: inset #fff 0 0 60px
 }
 h4 {
   margin: 0px;
