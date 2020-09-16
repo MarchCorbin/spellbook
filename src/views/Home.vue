@@ -60,8 +60,9 @@ a {
 }
 
 .title {
-    font-size: 3em;
-    margin-bottom: 1em;
+  font-size: 3em;
+  margin-bottom: 1em;
+  margin: 1em 1em;
 }
 
 .icon-holder {
