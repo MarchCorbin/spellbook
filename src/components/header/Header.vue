@@ -6,7 +6,6 @@
           <button class='header-title'>The Standard Book of Spells by Miranda Goshawk: Year 1</button>
           <img src='/assets/illuminati.png' class='header-logo' alt='Hogwarts spell book' />
       </router-link>  
-      
     </div>
     <div class='button-holder'>
       <router-link to='/createspell'>
@@ -18,7 +17,6 @@
     </div>
   </nav>
 </template>
-
 
 <script>
 export default {

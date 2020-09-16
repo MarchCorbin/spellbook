@@ -29,15 +29,10 @@
     </ul>
   </div>
 </template>
-
-
-
 <script>
 import Header from '../header/Header.vue'
-
 export default {
   props: {
-
   },
   name: 'SpellIndex',
   components: {
@@ -54,7 +49,6 @@ export default {
     this.fetchUserSpells()
   },
   methods: {
-
     clickHandler(e) {
       const filtered = document.querySelector('.spell-section-filtered')
       const nonfiltered = document.querySelector('.spell-section')
@@ -76,7 +70,6 @@ export default {
         this.convertToSpell(JSON.parse(spell))
         }
       })
-      
   },
   convertToSpell(parsedItem) {
     let newSpell = {
@@ -103,12 +96,7 @@ export default {
     }
   }   
 }
-
-
-
-
 </script>
-
 <style scoped>
 
   .spell-button {
@@ -141,6 +129,4 @@ export default {
     grid-template-columns: 1fr 1fr
   }
 }
-
-
 </style>

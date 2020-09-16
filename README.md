@@ -55,10 +55,6 @@ Overall, it was a learning experience and we did gain exposure to Vue which was 
 * Users can filter and view spells by their type
 ![Filter](src/srcassets/filtering.gif.sb-99dc808f-FXKEL0)
 
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
