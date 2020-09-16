@@ -19,31 +19,23 @@
     </div>
   </div>
 </template>
-
 <script>
-// import '/assets/Spell.png'
-// import '/assets/Curse.png'
-// import '/assets/Hex.png'
-
 export default {
-
   name: 'Home',
   components: {
   },
-  
 }
 </script>
-
 <style>
+
+* {
+  font-family: 'IM Fell English', serif;
+}
+
 .button-holder {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-* {
-  font-family: 'IM Fell English', serif;
-  
 }
 
 body {
@@ -51,17 +43,13 @@ body {
   background-size: 110%;
 }
 
-/* .nav-button {
-
-} */
-
 a {
   margin: .5em;
 }
 
 .title {
-    font-size: 3em;
-    margin-bottom: 1em;
+  font-size: 3em;
+  margin-bottom: 1em;
 }
 
 .icon-holder {
@@ -95,9 +83,5 @@ button {
     display: flex;
     flex-direction: column;
   }
-  
-  /* .submit-btn {
-    width: 100%
-  } */
 }
 </style>

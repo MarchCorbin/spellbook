@@ -55,7 +55,6 @@
 <script>
 import Header from '../header/Header.vue'
 export default {
-
     name: 'CreateSpell',
     components: {
         Header
@@ -89,7 +88,6 @@ export default {
     submitHandler(e) {
       e.preventDefault()
      let result = this.checkButtons()
-     console.log(result, 'IAMRESULT')
      if(result){
       this.keyVal = localStorage.length
       let newSpell = {
@@ -117,7 +115,6 @@ export default {
           }
         })
         if(count === 0){
-          console.log(count)
           errMessage.innerText = "Select a Spell Type!"
           return false
         } else {
@@ -147,6 +144,7 @@ export default {
 .submit-btn {
   box-shadow: inset #ed0101 0 0 60px
 }
+
 h4 {
   margin: 0px;
 }
@@ -154,11 +152,11 @@ h4 {
 h1 h2 {
   margin-bottom: 0px;
 }
+
 .spell-img {
   height: 3em;
   pointer-events: none;
   margin-bottom: -0.5em;
-  
 }
 
 .spell-type {
